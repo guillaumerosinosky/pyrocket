@@ -4,12 +4,14 @@ PROGNAME=pyrocket
 VERSION=0.7
 RELEASE_NAME=$PROGNAME-$VERSION
 
-svn export src $RELEASE_NAME.orig
+#svn export src $RELEASE_NAME.orig
+cp -Rf src $RELEASE_NAME.orig
 cd $RELEASE_NAME.orig
 rm -r icons
 rm -r debian
 cd ..
-svn export src $RELEASE_NAME
+#svn export src $RELEASE_NAME
+cp -Rf src $RELEASE_NAME
 cd $RELEASE_NAME
 rm -r icons
 debuild
